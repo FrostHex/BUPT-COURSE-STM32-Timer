@@ -31,9 +31,12 @@ jobs:
 
     - name: mkdir
       run: mkdir ./build
-    - name: Build
+    - name: cmake-config
       # Build your program with the given configuration
       run: cmake -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -S ./ -B ./build
+    - name: cmake-build
+      run: cmake --build ./build --target timer.elf -j 9
+    
     - name: ls
       run: ls ./build
     - name: publish
