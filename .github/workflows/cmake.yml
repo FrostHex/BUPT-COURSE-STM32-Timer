@@ -37,21 +37,5 @@ jobs:
     - name: cmake-build
       run: cmake --build ./build --target timer.elf -j 9
     
-    - name: Create Release
-      id: release
-      uses: actions/create-release@v1.0.0
-      with:
-        tag_name: v1.0.0
-        release_name: release
-        body: release
-    
-    - name: publish
-      uses: actions/upload-artifact@v2
-      with:
-        name: release
-        upload_url: ${{ steps.Create Release.outputs.upload_url }}
-        path: |
-          ./build/timer.elf
-          ./build/timer.bin
-          ./build/timer.hex
+
 
