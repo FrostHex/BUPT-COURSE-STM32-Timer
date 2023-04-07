@@ -34,7 +34,7 @@ jobs:
 
     - name: Build
       # Build your program with the given configuration
-      run: cmake --build --config ${{env.BUILD_TYPE}} --target timer.elf -j 9
+      run: cmake --build ./build --config ${{env.BUILD_TYPE}} --target timer.elf -j 9
 
     - name: Test
       working-directory: ${{github.workspace}}/build
