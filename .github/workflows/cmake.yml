@@ -35,13 +35,13 @@ jobs:
       # Build your program with the given configuration
       run: cmake -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -S ./ -B ./build
     - name: ls
-      run: ls -a
+      run: ls ./build
     - name: publish
       uses: actions/upload-artifact@v2
       with:
         name: myapp-and-doc
         path: |
-          ./timer.elf
-          ./timer.bin
-          ./timer.hex
+          ./build/timer.elf
+          ./build/timer.bin
+          ./build/timer.hex
 
