@@ -40,7 +40,7 @@ jobs:
       with:
         name: myapp-and-doc
         path: |
-          ./build/timer.elf
-          ./build/timer.bin
-          ./build/timer.hex
+          ./timer.elf
+          ./timer.bin
+          ./timer.hex
 
