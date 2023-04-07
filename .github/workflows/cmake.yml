@@ -34,7 +34,8 @@ jobs:
     - name: Build
       # Build your program with the given configuration
       run: cmake -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -S ./ -B ./build
-
+    - name: ls
+      run: ls -a
     - name: publish
       uses: actions/upload-artifact@v2
       with:
