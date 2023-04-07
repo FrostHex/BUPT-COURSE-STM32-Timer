@@ -22,11 +22,14 @@ jobs:
     
     
     steps:
+    - name: checkout
+      uses: actions/checkout@v3
     - name: arm-none-eabi-gcc
+    
       run: sudo apt-get install -y gcc-arm-none-eabi
 
     - name: Configure CMake
-      run: cmake -G Ninja -DCMAKE_BUILD_TYPE=Debug
+      run: cmake -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
 
     - name: Build
