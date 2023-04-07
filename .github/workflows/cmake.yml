@@ -29,7 +29,7 @@ jobs:
       run: sudo apt-get install -y gcc-arm-none-eabi
 
     - name: Configure CMake
-      run: cmake -G Ninja -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -G -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
 
     - name: Build
